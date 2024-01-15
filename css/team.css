@@ -1,0 +1,454 @@
+/* Font */
+@font-face {
+  font-family: "Beef'd";
+  src: url("../fonts/Beef'd.ttf");
+}
+
+/* Color variables */
+:root {
+  --color_detail: #FFFFFF;
+  --dark_opaque: #000;
+  --dark_transparent: rgba(0, 0, 0, 0.60);
+  --dark_foggy: rgba(0, 0, 0, 0.69);
+}
+
+  body{
+    margin:0;
+    text-align:center;
+    font-family: Montserrat, sans-serif;
+    background:#a37cee;
+  }
+
+  p {
+    color: #a37cee;
+    margin: 0%;
+  }
+
+  p:hover {
+    color: black
+  }
+
+  a {
+    text-decoration: none;
+    color: #a37cee;
+  }
+
+  /* Coloring the link hover features */
+  .blue:hover {
+    background-color: #45C2DD;
+    color: white;
+    border-radius: 2rem;
+  } 
+
+  .orange:hover {
+    background-color: #FFA373;
+    color: white;
+    border-radius: 2rem;
+  } 
+  
+  .green:hover {
+    background-color: #89CB58;
+    color: white;
+    border-radius: 2rem;
+  } 
+
+  /* Inside the body */
+  .container {
+    width:90%;
+    margin:0 auto;
+    margin-top: 75px;
+  }
+
+  .img_container {
+    position: relative;
+  }
+
+  /* defining the images that will not have hover features */
+  .img_not_hover {
+    position: absolute;
+    top: 0px;
+    left: 2.5%;
+    margin-top: 5%;
+    width: 95%;
+    object-fit:cover;
+  }
+
+  /* defining the images that will have hover features*/
+  .img_hover {
+    position: relative;
+    margin-top: 5%;
+    width: 95%;
+    transition: opacity .5s ease-in;
+  }
+
+  .img_hover:hover {
+    opacity: 0%;
+    transition: opacity .3s ease-out;
+  }
+
+  input[type="radio"] {
+      display:none;
+  }
+
+  label {
+    width:21%;
+    float:left;
+    text-align:center;
+    background:#ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    color:#222222;
+    padding:0.5%;
+    margin:1.5%;
+    margin-bottom:30px;
+    cursor:pointer;
+    border-radius: 2rem;
+  }
+
+  label:hover { 
+      transform: scale(1.1);
+  }
+
+  /* Full Team Filter */
+  input[type="radio"][id="UH"]:checked + label {
+    background:#45C2DD;
+    color: white;
+    border-radius: 2rem;
+  }
+
+  /* Team Lead Filter */
+  input[type="radio"][id="TL"]:checked + label {
+    background:#FFA373;
+    color: white;
+    border-radius: 2rem;
+  }
+  input[type="radio"][id="TL"]:checked ~ .HX,
+  input[type="radio"][id="TL"]:checked ~ .Marketing,
+  input[type="radio"][id="TL"]:checked ~ .Sponsorship, 
+  input[type="radio"][id="TL"]:checked ~ .Design,
+  input[type="radio"][id="TL"]:checked ~ .Tech {
+    width:0;
+    height:0;
+    padding:0;
+    margin:0;
+    opacity:0;
+  }
+
+  /* HX Filter */
+  input[type="radio"][id="HX"]:checked + label {
+    background:#89CB58;
+    color: white;
+    border-radius: 2rem;
+  }
+  input[type="radio"][id="HX"]:checked ~ .TL,
+  input[type="radio"][id="HX"]:checked ~ .Marketing,
+  input[type="radio"][id="HX"]:checked ~ .Sponsorship, 
+  input[type="radio"][id="HX"]:checked ~ .Design,
+  input[type="radio"][id="HX"]:checked ~ .Tech {
+    width:0;
+    height:0;
+    padding:0;
+    margin:0;
+    opacity:0;
+  }
+
+  /* Marketing Filter */
+  input[type="radio"][id="Marketing"]:checked + label {
+    background:#45C2DD;
+    color: white;
+    border-radius: 2rem;
+  }
+  input[type="radio"][id="Marketing"]:checked ~ .TL,
+  input[type="radio"][id="Marketing"]:checked ~ .HX,
+  input[type="radio"][id="Marketing"]:checked ~ .Sponsorship, 
+  input[type="radio"][id="Marketing"]:checked ~ .Design,
+  input[type="radio"][id="Marketing"]:checked ~ .Tech {
+    width:0;
+    height:0;
+    padding:0;
+    margin:0;
+    opacity:0;
+  }
+
+  /* Sponsorship Filter */
+  input[type="radio"][id="Sponsorship"]:checked + label {
+    background:#FFA373;
+    color: white;
+    border-radius: 2rem;
+  }
+  input[type="radio"][id="Sponsorship"]:checked ~ .TL,
+  input[type="radio"][id="Sponsorship"]:checked ~ .HX,
+  input[type="radio"][id="Sponsorship"]:checked ~ .Marketing, 
+  input[type="radio"][id="Sponsorship"]:checked ~ .Design,
+  input[type="radio"][id="Sponsorship"]:checked ~ .Tech {
+    width:0;
+    height:0;
+    padding:0;
+    margin:0;
+    opacity:0;
+  }
+
+  /* Design Filter */
+  input[type="radio"][id="Design"]:checked + label {
+    background:#89CB58;
+    color: white;
+    border-radius: 2rem;
+  }
+  input[type="radio"][id="Design"]:checked ~ .TL,
+  input[type="radio"][id="Design"]:checked ~ .HX,
+  input[type="radio"][id="Design"]:checked ~ .Marketing, 
+  input[type="radio"][id="Design"]:checked ~ .Sponsorship,
+  input[type="radio"][id="Design"]:checked ~ .Tech {
+    width:0;
+    height:0;
+    padding:0;
+    margin:0;
+    opacity:0;
+  }
+
+  /* Tech Filter */
+  input[type="radio"][id="Tech"]:checked + label {
+    background:#45C2DD;
+    color: white;
+    border-radius: 2rem;
+  }
+  input[type="radio"][id="Tech"]:checked ~ .TL,
+  input[type="radio"][id="Tech"]:checked ~ .HX,
+  input[type="radio"][id="Tech"]:checked ~ .Marketing, 
+  input[type="radio"][id="Tech"]:checked ~ .Sponsorship,
+  input[type="radio"][id="Tech"]:checked ~ .Design {
+    width:0;
+    height:0;
+    padding:0;
+    margin:0;
+    opacity:0;
+  }
+  
+  /* Each square that holds the photos and the text */
+  .tile {
+    width: 23%;
+    height: auto;
+    float:left;
+    transition:all 1s;
+    margin:0.5%;
+    padding:0.5%;
+    text-align:center;
+    background-color: white;
+    margin-bottom: 1%;
+  }
+
+  /* Easiest way to create space between the filter buttons and images */
+  .space {
+    height: 200px;
+    width: 100px;
+  }
+
+/********************************************************************************************/
+/* Navbar styling */
+
+/* Animation to make item grow on mouse over, and shrink on mouse leave */
+.grow { 
+  transition: all .2s ease-in-out; 
+}
+  
+.grow:hover { 
+  transform: scale(1.3); 
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  background: var(--dark_transparent);
+  border-top: solid 1px var(--color_detail);
+  align-items: center;
+  z-index: 1000;
+}
+
+.navbar-nav {
+  right: 20px;
+  background:var(--dark_foggy);
+  position: absolute;
+  padding: 20px;
+  margin-top: 1em;
+}
+
+.nav-item {
+  font-family: Montserrat, sans-serif;
+  text-decoration: none;
+  font-size: 130%;
+  font-weight: 300;
+  color: var(--color_detail);
+}
+
+.dropdown-menu {
+  border: none;
+  background: none;
+}
+
+a.dropdown-item {
+  color: var(--color_detail);
+}
+
+a.dropdown-item:hover {
+  color: var(--color_detail);
+  background: var(--dark_transparent);
+}
+
+.logo {
+  font-family: "Beef'd";
+  font-size: 1px;
+}
+
+.disappear {
+  display: none;
+}
+
+.mini-logoz {
+  height: 30px;
+  margin-top: -2px;
+  margin-right: 3px;
+} 
+
+.sponsor {
+  display: inline-block;
+}
+
+/********************************************************************************************/
+/* Contact window styling */
+
+.modal-dialog {
+  background: none;
+}
+
+.modal-content {
+  background:var(--dark_transparent);
+  color: var(--color_detail);
+}
+
+.modal-body {
+  text-align: center;
+}
+
+.modal-body a {
+  color: var(--color_detail);
+  text-decoration-line: underline;
+}
+
+.modal-body a:hover {
+  color: #45C2DD;
+}
+
+.social-media-img {
+  width: 15%;
+}
+
+.social-media {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+.no-underline:link, .no-underline:visited, .no-underline:hover, .no-underline:active {
+  text-decoration: none;
+  padding: 10% 2.5%;
+}
+
+.txt {
+  font-family: Montserrat, sans-serif;
+  text-align: center;
+  font-size: 150%;
+  margin-bottom: 2rem;
+  font-weight: 400;
+  z-index: 100;
+  letter-spacing: -0.6px;
+  color: var(--color_detail);
+}
+
+.txt:hover {
+  color: var(--color_detail)
+}
+
+/********************************************************************************************/
+/* Special styling for mid sized screens */
+
+@media all and (min-width: 768px) and (max-width: 1150px) {
+  .space {
+    height: 175px;
+    width: 100px;
+  }
+}
+
+/********************************************************************************************/
+/* Special styling for smaller screens only */
+
+@media all and (max-width: 768px) {
+  .tile {
+    width: 31%;
+    height: auto;
+    float:left;
+    transition:all 1s;
+    margin:0.5%;
+    padding:0.5%;
+    text-align:center;
+    background-color: white;
+    margin-bottom: 1%;
+  }
+
+  .space {
+    height: 100px;
+    width: 100px;
+  }
+
+  nav {
+    height: 10%;
+  }
+
+  container {
+    margin-top: 100px;
+  }
+
+  label {
+    font-size: 2.5vw;
+  }
+}
+
+/********************************************************************************************/
+/* Special styling for larger screens only */
+
+@media all and (min-width: 768px) {
+  /********************************************************************/
+  /* Navbar */
+  .navbar-nav {
+    padding: 0;
+    margin-top: 0;
+    background: none;
+  }
+
+  .dropdown-menu {
+    top: 0;
+    background: var(--dark_transparent);
+  }
+
+  .mini-logoz {
+    display: none;
+  }
+
+  .nav-item {
+    font-size:130%;
+  }
+
+  a.nav-link:link, a.nav-link:visited, a.nav-link:hover, a.nav-link:active {
+    color: var(--color_detail);
+  }
+
+  .logo {
+    font-size: 90%;
+    margin-right: 30px;
+  }
+
+  .disappear {
+    display:block;
+  }
+
+  .txt {
+    font-size:200%;
+  }
+}
